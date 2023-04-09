@@ -11,16 +11,13 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Data
-public class Paiement {
+public class AnneeScolaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
-    private Double montant;
-    private Date date;
-    private Statut statut;
 
-    @OneToOne
-    @JoinColumn(name = "classe_etude_id")
-    private ClasseEtude classeEtude;
+    @Column(name = "date_limite")
+    private Date dateLImite;
+
+    private CloseAnnee cloture;
 }
