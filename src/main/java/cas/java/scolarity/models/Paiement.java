@@ -1,5 +1,6 @@
 package cas.java.scolarity.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class Paiement {
     private Date date;
     private Statut statut;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "classe_etude_id")
     private ClasseEtude classeEtude;

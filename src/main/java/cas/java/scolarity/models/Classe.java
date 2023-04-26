@@ -30,6 +30,7 @@ public class Classe {
     @JoinColumn(name = "inscription_id")
     private Inscription inscription;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "classes")
     private List<NiveauEtude> niveauEtudes = new ArrayList<>();
 

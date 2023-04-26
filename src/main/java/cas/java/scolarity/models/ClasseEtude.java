@@ -1,5 +1,6 @@
 package cas.java.scolarity.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,9 +23,11 @@ public class ClasseEtude {
     private BigInteger classe_id;
     private BigInteger niveau_etude_id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "classeEtude")
     private List<Etudiant> etudiants;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "classeEtude", cascade = CascadeType.ALL)
     private Paiement paiement;
 }
